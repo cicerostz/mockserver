@@ -8,5 +8,9 @@
   },
   "author": "Cícero Silva",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "typescript": "^5.0.2"
+  }
 }

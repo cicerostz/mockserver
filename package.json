@@ -4,7 +4,9 @@
   "description": "Servidor simulado para prática de protocolo de comunicação HTTP(arquitetura de rede client server)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "teste1": "echo \"Estou executando o teste1...\"",
+    "start": "npx serve -p 3000 ./dist"
   },
   "author": "Cícero Silva",
   "license": "ISC",

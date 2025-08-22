@@ -316,6 +316,6 @@ Se você encontrar algum problema ou tiver dúvidas:
 
 ---
 
-**Versão:** 1.2.0 | **Última atualização:** 2024
+**Versão:** 1.2.0 | **Última atualização:** 22/08/2025
 
 > 💡 **Dica:** Este projeto é ideal para estudantes que estão aprendendo desenvolvimento web e querem entender os fundamentos da comunicação HTTP e arquitetura cliente-servidor.

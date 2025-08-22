@@ -17,6 +17,9 @@ Este projeto é um servidor simulado desenvolvido em Node.js que demonstra conce
 - ✅ Servidor HTTP nativo do Node.js
 - ✅ Suporte a ES Modules (JavaScript moderno)
 - ✅ Servindo arquivos estáticos
+- ✅ API REST com dados JSON (webservice)
+- ✅ Configuração CORS para requisições cross-origin
+- ✅ Múltiplas portas (3000 para frontend, 3001 para API)
 - ✅ Configuração de hostname e porta
 
 ### Frontend (Aplicação Web)
@@ -30,9 +33,44 @@ Este projeto é um servidor simulado desenvolvido em Node.js que demonstra conce
 
 A aplicação inclui dados simulados de filmes brasileiros populares:
 
-1. **Ainda Estou fggegwegewgegw** - Drama/Suspense
+1. **Ainda Estou Aqui** - Drama/Suspense
 2. **A Substância** - Drama/Terror  
 3. **Robô Selvagem** - Aventura/Animação/Comédia/Família
+
+
+
+## 🔌 API Endpoints
+
+### GET /
+**URL:** `http://localhost:3001/`
+
+**Resposta:**
+```json
+[
+  {
+    "id": "1d4f66c6-c48b-4743-ba6c-555aaafbfd0f",
+    "title": "Ainda Estou Aqui",
+    "genre": "Drama, Suspense",
+    "synopsis": "Ainda Estou Aqui é uma adaptação..."
+  },
+  {
+    "id": "3a15945f-95a0-476c-9187-9de5d2547137",
+    "title": "A Substância",
+    "genre": "Drama, Terror",
+    "synopsis": "Em A Substância, Elisabeth Sparkle..."
+  },
+  {
+    "id": "2da13f8f-9c45-4970-af69-1e221435b7ab",
+    "title": "Robô Selvagem",
+    "genre": "Aventura, Animação, Comédia, Família",
+    "synopsis": "Uma nave naufraga numa terra..."
+  }
+]
+```
+
+**Headers de Resposta:**
+- `Content-Type: application/json`
+- `Access-Control-Allow-Origin: *` (CORS habilitado)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -53,10 +91,13 @@ mockserver/
 │   ├── app.js              # Lógica JavaScript
 │   ├── styles.css          # Estilos CSS
 │   └── banner.png          # Imagem banner
+├── webservice/             # API/Webservice backend
+│   └── server.js           # Servidor API com dados JSON
 ├── index.js                # Servidor principal (ES Modules)
 ├── index.cjs               # Versão CommonJS
 ├── index.mjs               # Versão ES Modules explícita
 ├── package.json            # Configurações do projeto
+├── package-lock.json       # Lock de dependências
 ├── .gitignore              # Arquivos ignorados pelo Git
 ├── .nvmrc                  # Versão do Node.js
 └── README.md               # Este arquivo
@@ -83,6 +124,33 @@ npm install
 ```
 
 ### Execução
+
+**Opção 1: Frontend com Serve (Recomendado)**
+```bash
+npm start
+# Serve a aplicação frontend na porta 3000
+```
+
+**Opção 2: API/Webservice Backend**
+```bash
+node webservice/server.js
+# Inicia a API na porta 3001
+```
+
+**Opção 3: Servidor ES Modules Simples**
+```bash
+node index.js
+```
+
+**Opção 4: Servidor CommonJS**
+```bash
+node index.cjs
+```
+
+**Opção 5: Servidor ES Modules Explícito**
+```bash
+node index.mjs
+```
 
 ### Executando o Servidor Mock (JSON)
 
@@ -117,27 +185,63 @@ Navegue até a pasta `dist/` e abra `index.html` para visualizar a interface web
 
 ## 🌐 Como Usar a Aplicação
 
-1. **Inicie o servidor** usando um dos comandos acima
-2. **Abra a aplicação web** no navegador
-3. **Clique no botão "Buscar Filmes"** para carregar a lista
-4. **Explore os filmes** disponíveis com suas sinopses
+**Para o Frontend:**
+1. **Inicie o servidor frontend:**
+   ```bash
+   npm start
+   ```
+
+2. **Acesse no navegador:**
+   ```
+   http://localhost:3000
+   ```
+
+3. **Interaja com a aplicação:**
+   - Clique no botão "Buscar Filmes"
+   - Veja a lista de filmes carregada dinamicamente
+
+**Para a API/Webservice:**
+1. **Inicie o servidor da API:**
+   ```bash
+   node webservice/server.js
+   ```
+
+2. **Acesse a API:**
+   ```
+   http://localhost:3001
+   ```
+
+3. **Teste a API:**
+   - Faça requisições GET para obter dados JSON
+   - Use ferramentas como Postman, curl ou fetch() no JavaScript
 
 ## 📚 Conceitos Demonstrados
 
-### Arquitetura Client-Server
-- **Cliente:** Navegador web executando HTML/CSS/JavaScript
-- **Servidor:** Node.js servindo conteúdo via protocolo HTTP
-- **Comunicação:** Requisições HTTP entre cliente e servidor
+### 🏗️ **Arquitetura Client-Server**
+- Separação clara entre cliente (frontend) e servidor (backend)
+- Comunicação via protocolo HTTP
+- Servindo conteúdo estático e dinâmico
+- API REST para comunicação entre serviços
 
-### ES Modules vs CommonJS
-- **ES Modules:** Padrão moderno (`import`/`export`)
-- **CommonJS:** Padrão tradicional (`require`/`module.exports`)
-- **Compatibilidade:** Suporte a ambos os sistemas
+### 📦 **ES Modules vs CommonJS**
+- Implementação moderna com `import/export`
+- Compatibilidade com versões anteriores (CommonJS)
+- Configuração `"type": "module"` no package.json
 
-### Frontend Responsivo
-- **HTML Semântico:** Estrutura bem organizada
-- **CSS Flexbox/Grid:** Layout responsivo
-- **JavaScript Moderno:** Manipulação do DOM
+### 🌐 **API REST e CORS**
+- Endpoint JSON para dados estruturados
+- Configuração CORS para requisições cross-origin
+- Separação de responsabilidades (frontend/backend)
+
+### 🎨 **Frontend Responsivo**
+- Interface web interativa
+- Manipulação do DOM com JavaScript
+- CSS responsivo para diferentes dispositivos
+
+### 🔧 **Múltiplos Servidores**
+- Frontend servido na porta 3000
+- API/Backend na porta 3001
+- Arquitetura de microserviços simplificada
 
 ## 🎯 Objetivos Educacionais
 
@@ -154,6 +258,9 @@ Este projeto foi desenvolvido para ensinar:
 ## 🔧 Scripts Disponíveis
 
 ```bash
+# Iniciar servidor frontend (porta 3000)
+npm start
+
 # Executar testes (placeholder)
 npm test
 
@@ -166,13 +273,19 @@ npm list
 
 ## 📝 Próximas Melhorias
 
-- [ ] API REST completa para filmes
-- [ ] Banco de dados para persistência
+- [x] ~~API REST completa para filmes~~ ✅ **Implementado**
+- [x] ~~Configuração CORS~~ ✅ **Implementado**
+- [x] ~~Múltiplos servidores~~ ✅ **Implementado**
+- [ ] Implementação de rotas dinâmicas (POST, PUT, DELETE)
+- [ ] Sistema de autenticação básico
+- [ ] Banco de dados simulado (JSON file)
 - [ ] Sistema de busca e filtros
-- [ ] Autenticação de usuários
+- [ ] Validação de dados de entrada
 - [ ] Upload de imagens de filmes
 - [ ] Testes automatizados
+- [ ] Docker containerization
 - [ ] Deploy em produção
+- [ ] Documentação da API com Swagger
 
 ## 👨‍💻 Autor
 

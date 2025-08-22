@@ -3,6 +3,12 @@
 import { createServer } from 'node:http';
 
 const mockData = JSON.stringify([   
+    {
+        id: '2da13f8f-9c45-4970-af69-1e221435b7ab', 
+        title: 'Pueira em alto Mar', 
+        genre: 'Aventura, Animação, Comédia, Família', 
+        synopsis: 'Uma nave naufraga numa terra desabitada e dá início à aventura épica do robô Roz, a última unidade das chamadas ROZZUM ainda funcional e inteligente. Preso nesta ilha aparentemente sozinho, Roz precisa sobreviver às intempéries da floresta. Sua única esperança é se adaptar ao ambiente hostil e avesso às suas programações. Para isso, Roz passa a conviver com os animais aprendendo sobre a vida na selva e os modos de sobrevivência na natureza. É durante essa exploração que Roz encontra um filhote de ganso e estabelece como missão cuidá-lo. Desse laço inesperado com o bicho abandonado, Roz se aproxima de uma realidade nova e instigante, construindo uma relação harmoniosa com os animais nativos. Do mesmo diretor de Lilo & Stitch e Como Treinar o Seu Dragão, Robô Selvagem é uma história comovente sobre a convivência entre tecnologia e natureza e o significado de estar vivo.'
+    },
         {
         id: '1d4f66c6-c48b-4743-ba6c-555aaafbfd0f', 
         title: 'Ainda Estou fggegwegewgegw ', 

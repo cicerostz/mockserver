@@ -84,26 +84,34 @@ npm install
 
 ### Execução
 
-**Opção 1: Servidor ES Modules (Recomendado)**
-```bash
-node index.js
+### Executando o Servidor Mock (JSON)
+
+O servidor HTTP que retorna os dados simulados em JSON está localizado em:
+
+```
+dist/webserver/server.js
 ```
 
-**Opção 2: Servidor CommonJS**
+Execute o servidor com:
 ```bash
-node index.cjs
+node dist/webserver/server.js
 ```
 
-**Opção 3: Servidor ES Modules Explícito**
+### Como acessar os dados JSON
+
+Após iniciar o servidor, acesse no navegador ou via curl:
+
+- **Endpoint JSON:** `http://localhost:3001/`
+
+Exemplo usando curl:
 ```bash
-node index.mjs
+curl http://localhost:3001/
 ```
 
-### Acesso
+O JSON será exibido na resposta HTTP. O terminal exibe apenas logs do servidor.
 
-Após iniciar o servidor, acesse:
-- **Servidor:** `http://127.0.0.1:3000`
-- **Aplicação Web:** Navegue até a pasta `dist/` e abra `index.html`
+### Aplicação Web
+Navegue até a pasta `dist/` e abra `index.html` para visualizar a interface web (se aplicável).
 
 ## 🌐 Como Usar a Aplicação
 

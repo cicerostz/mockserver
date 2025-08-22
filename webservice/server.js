@@ -5,7 +5,7 @@ import { createServer } from 'node:http';
 const mockData = JSON.stringify([   
         {
         id: '1d4f66c6-c48b-4743-ba6c-555aaafbfd0f', 
-        title: 'Ainda Estou Aqui ', 
+        title: 'Ainda Estou fggegwegewgegw ', 
         genre: 'Drama, Suspense', 
         synopsis: 'Ainda Estou Aqui é uma adaptação cinematográfica do livro autobiográfico de Marcelo Rubens Paiva, que narra a emocionante trajetória de sua mãe, Eunice Paiva, durante a ditadura militar no Brasil. Ambientada em 1970, a história retrata como a vida de uma mulher comum, casada com um importante político, muda drasticamente após o desaparecimento de seu marido, capturado pelo regime militar. Forçada a abandonar sua rotina de dona de casa, Eunice (Fernanda Torres/Fernanda Montenegro) se transforma em uma ativista dos direitos humanos, lutando pela verdade sobre o paradeiro de seu marido e enfrentando as consequências brutais da repressão. O filme explora não apenas o drama pessoal de Eunice, mas também o impacto do regime militar na vida de milhares de famílias brasileiras, destacando o papel das mulheres na resistência. Com uma narrativa profunda e sensível, Ainda Estou Aqui traz à tona questões de perda, coragem e resiliência, enquanto revisita um dos períodos mais sombrios da história do Brasil. A obra é um tributo à força de Eunice Paiva, que, contra todas as adversidades, se torna uma figura central na luta pelos direitos humanos no país.'
     },
@@ -26,6 +26,12 @@ const hostname = 'localhost';
 const port = 3001;
 
 const server = createServer((req, res) => {
+
+    //CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    // res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
     //cabeçalho da resposta
     res.setHeader('Content-Type', 'application/json');
 

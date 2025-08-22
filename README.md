@@ -30,7 +30,7 @@ Este projeto é um servidor simulado desenvolvido em Node.js que demonstra conce
 
 A aplicação inclui dados simulados de filmes brasileiros populares:
 
-1. **Ainda Estou Aqui** - Drama/Suspense
+1. **Ainda Estou fggegwegewgegw** - Drama/Suspense
 2. **A Substância** - Drama/Terror  
 3. **Robô Selvagem** - Aventura/Animação/Comédia/Família
 
@@ -89,12 +89,14 @@ npm install
 O servidor HTTP que retorna os dados simulados em JSON está localizado em:
 
 ```
-dist/webserver/server.js
+webservice/server.js
 ```
+
+O servidor utiliza ES Modules e já inclui cabeçalhos CORS para permitir requisições de qualquer origem.
 
 Execute o servidor com:
 ```bash
-node dist/webserver/server.js
+node webservice/server.js
 ```
 
 ### Como acessar os dados JSON
